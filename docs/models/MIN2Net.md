@@ -7,11 +7,7 @@ nav_order: 5
 
 # min2net.model.MIN2Net
 
-
-[<img src="./../../assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/model/MIN2Net.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
-
-
-[<img src="https://MIN2Net.github.io/test_app/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/model/MIN2Net.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/model/MIN2Net.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 
 

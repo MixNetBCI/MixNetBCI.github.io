@@ -7,7 +7,7 @@ nav_order: 2
 
 # min2net.preprocessing.BCIC2a
 
-[<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/tree/main/preprocessing/BCIC2a){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/tree/main/preprocessing/BCIC2a){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .fs-6 .fw-300 }
 
@@ -22,7 +22,7 @@ nav_order: 2
 ---
 ## Time domain
 
-[<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/preprocessing/BCIC2a/time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/preprocessing/BCIC2a/time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
 
@@ -101,7 +101,7 @@ prep.BCIC2a.time_domain.subject_independent_setting(k_folds=5,
 
 ## Filter Bank Common Spatial Pattern (FBCSP)
 
-[<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/preprocessing/BCIC2a/fbcsp.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/preprocessing/BCIC2a/fbcsp.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
 
@@ -200,7 +200,7 @@ prep.BCIC2a.fbcsp.subject_independent_setting(k_folds=5,
 ---
 ## Spectral Spatial mapping
 
-[<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/preprocessing/BCIC2a/spectral_spatial.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/preprocessing/BCIC2a/spectral_spatial.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
  Preprocess raw time-series EEG in subject-dependent setting using Spectral Spatial mapping. Split data into train, validation and test sets using stratified k-fold cross-validation.

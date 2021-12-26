@@ -8,7 +8,7 @@ permalink: /docs/models
 
 # Models
 
-[<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/tree/main/model){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/tree/main/model){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 EEG classification model
 {: .fs-6 .fw-300 }

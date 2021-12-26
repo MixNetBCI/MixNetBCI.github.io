@@ -7,7 +7,7 @@ nav_order: 6
 
 # min2net.model.MIN2Net_without_decoder
 
-[<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/model/MIN2Net_without_decoder.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/model/MIN2Net_without_decoder.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .no_toc }
 
