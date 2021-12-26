@@ -7,7 +7,7 @@ nav_order: 2
 
 # min2net.model.SpectralSpatialCNN
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/model/SpectralSpatialCNN.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/model/SpectralSpatialCNN.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .no_toc }
 

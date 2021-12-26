@@ -7,7 +7,7 @@ nav_order: 5
 
 # min2net.utils.DataLoader
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/utils.py#L82){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/utils.py#L82){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .no_toc }
 
