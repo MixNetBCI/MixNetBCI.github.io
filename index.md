@@ -69,7 +69,7 @@ $ conda activate min2net
 
 ### Tutorial
 
-[<img src="./assets/images/colab_favicon.ico" width="30" height="30"> View source on GitHub](https://colab.research.google.com/drive/1IE5J0Yn10ZIhWjSatQn_QWJWZblr6tZy?usp=sharing){: .btn .fs-5 .mb-4 .mb-md-0 }
+[<img src="./assets/images/colab_favicon.ico" width="30" height="30"> Open in Colab](https://colab.research.google.com/drive/1IE5J0Yn10ZIhWjSatQn_QWJWZblr6tZy?usp=sharing){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ### Citation
 
