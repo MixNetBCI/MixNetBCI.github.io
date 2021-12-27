@@ -22,7 +22,7 @@ nav_order: 1
 ## Download raw data
 
 ```py
-min2net.utils.load_raw(dataset_name)
+min2net.utils.load_raw(dataset)
 ```
 Dowload raw dataset from 
 1.  SMR_BCI: [SMR-BCI dataset- Two class motor imagery (002-2014)](http://bnci-horizon-2020.eu/database/data-sets), 
@@ -34,7 +34,7 @@ Dowload raw dataset from
 
 | Arguments | Description |
 |:----------|:----------|
-|dataset_name   | `str` Dataset name E.g. 'SMR_BCI', 'BCIC2a' and 'OpenBMI' |
+|dataset   | `str` Dataset name E.g. 'SMR_BCI', 'BCIC2a' and 'OpenBMI' |
 
 **Example**
 ```py
