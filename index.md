@@ -93,5 +93,5 @@ P. Autthasan et al., "MIN2Net: End-to-End Multi-Task Learning for Subject-Indepe
 [<img src="./assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### License
-Copyright &copy; 2021-All rights reserved by [INTERFACES (BRAIN lab @ IST, VISTEC, Thailand)](https://vistec.ist/interfaces).
-Distributed by an [Apache License 2.0](https://github.com/IoBT-VISTEC/MIN2Net/tree/master/LICENSE.txt).
+Copyright &copy; 2021-All rights reserved by [INTERFACES (BRAIN lab @ IST, VISTEC, Thailand)](https://www.facebook.com/interfaces.brainvistec).
+Distributed by an [Apache License 2.0](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/LICENSE).
