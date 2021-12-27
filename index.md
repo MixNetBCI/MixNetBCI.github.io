@@ -11,6 +11,8 @@ permalink: /
 
 End-to-End Multi-Task Learning for Subject-Independent Motor Imagery EEG Classification
 
+[<img src="https://img.shields.io/pypi/v/min2net?color=green&logo=pypi&logoColor=white">](https://pypi.org/project/min2net/)
+
 [<img src="https://img.shields.io/badge/DOI-10.1109%2FTBME.2021.3137184-blue">](https://ieeexplore.ieee.org/document/9658165/)
 
 <!-- <div class="code-example" markdown="1">
