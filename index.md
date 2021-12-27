@@ -11,6 +11,7 @@ permalink: /
 
 End-to-End Multi-Task Learning for Subject-Independent Motor Imagery EEG Classification
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1IE5J0Yn10ZIhWjSatQn_QWJWZblr6tZy?usp=sharing)
 [![Pypi Downloads](https://img.shields.io/pypi/v/min2net?color=green&logo=pypi&logoColor=white)](https://pypi.org/project/min2net)
 [![DOI](https://img.shields.io/badge/DOI-10.1109%2FTBME.2021.3137184-blue)](https://ieeexplore.ieee.org/document/9658165)
 
@@ -65,6 +66,10 @@ $ conda activate min2net
   $ wget https://github.com/IoBT-VISTEC/MIN2Net/releases/download/v1.0.0/min2net-1.0.0-py3-none-any.whl
   $ pip install min2net-1.0.0-py3-none-any.whl
   ```
+
+### Tutorial
+
+[<img src="./assets/images/colab_favicon.ico" width="30" height="30"> View source on GitHub](https://colab.research.google.com/drive/1IE5J0Yn10ZIhWjSatQn_QWJWZblr6tZy?usp=sharing){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ### Citation
 
