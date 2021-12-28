@@ -33,7 +33,7 @@ min2net.model.MIN2Net_without_triplet()
 |:---|:----|:---|
 |input_shape   | `tuple` of integers. <br/> (1, *#time_point*, *#channel*) | (1,400,20)  |
 | num_class    | `int` number of class.  | 2  |
-| loss         | `list` of `str` (name of objective function), objective function or [tf.keras.losses.Loss](https://www.tensorflow.org/api_docs/python/tf/keras/losses) instance.  | [[`mean_squared_error`](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/model/loss.py#L6), <br/> `'sparse_categorical_crossentropy'`]  |
+| loss         | `list` of `str` (name of objective function), objective function or [tf.keras.losses.Loss](https://www.tensorflow.org/api_docs/python/tf/keras/losses) instance.  | [[`mean_squared_error`](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/loss.py#L6), <br/> `'sparse_categorical_crossentropy'`]  |
 | loss_weights | `list` of `float` [β1,β2] to weight the loss contributions of different model outputs. | [1., 1.] |
 |latent_dim|`int` or `None`. If `None`, latent_dim is equal to number of channels `C` or 64 for 2- or 3-class classification, respectively.|`None`|
 |  epochs      | `int` number of epochs to train the model.  |  200 |
