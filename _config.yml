@@ -111,7 +111,7 @@ image:
   path: https://min2net.github.io/assets/images/min2net-square.png
   height: 100
   width: 100
-  alt: Twitter Logo
+  alt: MIN2Net Logo
 
 kramdown:
   syntax_highlighter_opts:
