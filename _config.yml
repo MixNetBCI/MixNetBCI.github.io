@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: MIN2Net
 description: End-to-End Multi-Task Learning for Subject-Independent Motor Imagery EEG Classification
-image: "https://min2net.github.io/assets/images/min2net-square.png"
+image: /assets/images/min2net-square.png
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://min2net.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  MIN2Net
@@ -106,8 +106,8 @@ color_scheme: nil
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 plugins:
-  # - jekyll-seo-tag
-  - Jekyll-feed
+  - jekyll-seo-tag
+  # - Jekyll-feed
 
 kramdown:
   syntax_highlighter_opts:
