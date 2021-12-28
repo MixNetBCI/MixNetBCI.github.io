@@ -17,7 +17,7 @@ title: MIN2Net
 description: End-to-End Multi-Task Learning for Subject-Independent Motor Imagery EEG Classification
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://min2net.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  MIN2Net
+github_username:  IoBT-VISTEC
 remote_theme: pmarsceill/just-the-docs
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "docs/tests/"]
@@ -108,7 +108,7 @@ plugins:
   - jekyll-seo-tag
 
 image:
-  path: /assets/images/min2net-square.png
+  path: "/assets/images/min2net-square.png"
   height: 100
   width: 100
   alt: MIN2Net Logo
