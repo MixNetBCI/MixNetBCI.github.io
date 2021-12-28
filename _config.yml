@@ -15,10 +15,13 @@
 # in the templates via {{ site.myvariable }}.
 title: MIN2Net
 description: End-to-End Multi-Task Learning for Subject-Independent Motor Imagery EEG Classification
-image: /assets/images/min2net-square.png
+image:
+  path: /assets/images/min2net-square.png
+  height: 100
+  width: 100
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://min2net.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  MIN2Net
+github_username:  IoBT-VISTEC
 remote_theme: pmarsceill/just-the-docs
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "docs/tests/"]
