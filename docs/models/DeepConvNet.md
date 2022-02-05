@@ -57,7 +57,7 @@ min2net.model.DeepConvNet()
 
 | Arguments | Description | Default |
 |:---|:----|:---|
-|input_shape   | `tuple` of integers. <br/> (1, *#channel*, *#time_point*) | (20,400,1)  |
+|input_shape   | `tuple` of integers. <br/> (1, *#channel*, *#time_point*) | (1,20,400)  |
 | num_class    | `int` number of class.  | 2  |
 | loss         | `str` (name of objective function), objective function or [tf.keras.losses.Loss](https://www.tensorflow.org/api_docs/python/tf/keras/losses) instance.  |  `'sparse_categorical_crossentropy'` |
 |  epochs      | `int` number of epochs to train the model.  |  200 |
@@ -120,9 +120,9 @@ DeepConvNet.fit(X_train,
 
 | Arguments | Description |
 |:---|:----|
-|X_train   | `ndarray` Training EEG signals. shape (*#trial*, *#channel*, *#time_point*, *#depth*) | 
+|X_train   | `ndarray` Training EEG signals. shape (*#trial*, *#depth*, *#channel*, *#time_point*) | 
 |y_train   | `ndarray` Label of training set. shape (*#trial*) |
-|X_val   | `ndarray` Validation EEG signals. shape (*#trial*, *#channel*, *#time_point*, *#depth*) |
+|X_val   | `ndarray` Validation EEG signals. shape (*#trial*,*#depth*,  *#channel*, *#time_point*) |
 |y_val   | `ndarray` Label of validation set. shape (*#trial*) |
   
 ---
@@ -137,7 +137,7 @@ DeepConvNet.predict(X_test,
 
 | Arguments | Description |
 |:---|:----|
-|X_test   | `ndarray` Testing EEG signals. shape (*#trial*, *#channel*, *#time_point*, *#depth*) | 
+|X_test   | `ndarray` Testing EEG signals. shape (*#trial*, *#depth*, *#channel*, *#time_point*) | 
 |y_test   | `ndarray` Label of test set. shape (*#trial*) |
 
 **Returns:**
@@ -151,7 +151,7 @@ DeepConvNet.predict(X_test,
 from min2net.model import DeepConvNet
 import ndarray as np
 
-model = DeepConvNet(input_shape=(20,400,1), num_class=2, dropout_rate=0.25, shuffle=True)
+model = DeepConvNet(input_shape=(1,20,400), num_class=2, dropout_rate=0.25, shuffle=True)
 model.fit(X_train, y_train, X_val, y_val)
 
 Y, evaluation = model.predict(X_test, y_test)

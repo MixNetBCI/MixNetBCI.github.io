@@ -46,7 +46,7 @@ min2net.model.SpectralSpatialCNN()
 
 | Arguments | Description | Default |
 |:---|:----|:---|
-|input_shape   | `tuple` of integers. <br/> (1, *#time_point*, *#channel*) | (28,28,1)  |
+|input_shape   | `tuple` of integers. <br/> (*#height*, *#width*, *#depth*) | (28,28,1)  |
 | num_class    | `int` number of class.  | 2  |
 | loss         | `str` (name of objective function), objective function or [tf.keras.losses.Loss](https://www.tensorflow.org/api_docs/python/tf/keras/losses) instance.  |  `'sparse_categorical_crossentropy'` |
 |  epochs      | `int` number of epochs to train the model.  |  200 |
