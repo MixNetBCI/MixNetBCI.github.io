@@ -1,13 +1,13 @@
 ---
 layout: default
-title: BCIC2a dataset
+title: BCIC2b dataset
 parent: Preprocessing
 nav_order: 2
 ---
 
-# mixnet.preprocessing.BCIC2a
+# mixnet.preprocessing.BCIC2b
 
-[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2a){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2b){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .fs-6 .fw-300 }
 
@@ -22,7 +22,7 @@ nav_order: 2
 ---
 ## Time domain
 
-[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2a/time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2b/time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
 
@@ -54,7 +54,7 @@ time_domain.subject_dependent(k_folds,
 ```py
 import mixnet.preprocessing as prep
 
-prep.BCIC2a.time_domain.subject_dependent_setting(k_folds=5,
+prep.BCIC2b.time_domain.subject_dependent_setting(k_folds=5,
                                                  pick_smp_freq=100, 
                                                  bands=[8, 30], 
                                                  order=5, 
@@ -91,7 +91,7 @@ time_domain.subject_independent(k_folds,
 ```py
 import mixnet.preprocessing as prep
 
-prep.BCIC2a.time_domain.subject_independent_setting(k_folds=5,
+prep.BCIC2b.time_domain.subject_independent_setting(k_folds=5,
                                                     pick_smp_freq=100, 
                                                     bands=[8, 30], 
                                                     order=5, 
@@ -101,7 +101,7 @@ prep.BCIC2a.time_domain.subject_independent_setting(k_folds=5,
 
 ## Filter Bank Common Spatial Pattern (FBCSP)
 
-[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2a/fbcsp.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2b/fbcsp.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
 
@@ -141,7 +141,7 @@ bands = [[4, 8], [8, 12], [12, 16],
          [16, 20], [20, 24], [24, 28], 
          [28, 32], [32, 36], [36, 40]]
 
-prep.BCIC2a.fbcsp.subject_dependent_setting(k_folds=5, 
+prep.BCIC2b.fbcsp.subject_dependent_setting(k_folds=5, 
                                             pick_smp_freq=100, 
                                             n_components=4, 
                                             bands=bands, 
@@ -188,7 +188,7 @@ bands = [[4, 8], [8, 12], [12, 16],
          [16, 20], [20, 24], [24, 28], 
          [28, 32], [32, 36], [36, 40]]
 
-prep.BCIC2a.fbcsp.subject_independent_setting(k_folds=5, 
+prep.BCIC2b.fbcsp.subject_independent_setting(k_folds=5, 
                                               pick_smp_freq=100, 
                                               n_components=4, 
                                               bands=bands, 
@@ -200,7 +200,7 @@ prep.BCIC2a.fbcsp.subject_independent_setting(k_folds=5,
 ---
 ## Spectral Spatial mapping
 
-[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2a/spectral_spatial.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2b/spectral_spatial.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
  Preprocess raw time-series EEG in subject-dependent setting using Spectral Spatial mapping. Split data into train, validation and test sets using stratified k-fold cross-validation.
@@ -243,9 +243,9 @@ bands = [[7.5,14],[11,13],[10,14],[9,12],[19,22],
          [23,27],[28,32],[12,33],[11,22],[5,8],
          [7.5,17.5],[23,26],[5,20],[5,25],[10,20]]
 
-prep.BCIC2a.spectral_spatial.subject_dependent_setting(k_folds=5, 
+prep.BCIC2b.spectral_spatial.subject_dependent_setting(k_folds=5, 
                                                        pick_smp_freq=100, 
-                                                       n_components=10, 
+                                                       n_components=2, 
                                                        bands=bands, 
                                                        n_pick_bands=20, 
                                                        order=5, 
@@ -294,9 +294,9 @@ bands = [[7.5,14],[11,13],[10,14],[9,12],[19,22],
          [23,27],[28,32],[12,33],[11,22],[5,8],
          [7.5,17.5],[23,26],[5,20],[5,25],[10,20]]
 
-prep.BCIC2a.spectral_spatial.subject_independent_setting(k_folds=5, 
+prep.BCIC2b.spectral_spatial.subject_independent_setting(k_folds=5, 
                                                          pick_smp_freq=100, 
-                                                         n_components=10, 
+                                                         n_components=2, 
                                                          bands=bands, 
                                                          n_pick_bands=20, 
                                                          order=5, 
@@ -305,7 +305,7 @@ prep.BCIC2a.spectral_spatial.subject_independent_setting(k_folds=5,
 ---
 ## Spectral Spatial Signals generation
 
-[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2a/spectral_spatial_signals.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/BCIC2b/spectral_spatial_signals.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
  Preprocess raw time-series EEG in subject-dependent setting using Spectral Spatial Signals generation. Split data into train, validation and test sets using stratified k-fold cross-validation.
@@ -344,7 +344,7 @@ bands = [[4, 8], [8, 12], [12, 16],
             [16, 20], [20, 24], [24, 28], 
             [28, 32], [32, 36], [36, 40]]
 
-prep.BCIC2a.spectral_spatial_signals.subject_dependent_setting(k_folds=5, 
+prep.BCIC2b.spectral_spatial_signals.subject_dependent_setting(k_folds=5, 
                                                        pick_smp_freq=100, 
                                                        n_components=2, 
                                                        bands=bands, 
@@ -391,9 +391,9 @@ bands = [[4, 8], [8, 12], [12, 16],
             [16, 20], [20, 24], [24, 28], 
             [28, 32], [32, 36], [36, 40]]
 
-prep.BCIC2a.spectral_spatial_signals.subject_independent_setting(k_folds=5, 
+prep.BCIC2b.spectral_spatial_signals.subject_independent_setting(k_folds=5, 
                                                          pick_smp_freq=100, 
-                                                         n_components=4, 
+                                                         n_components=2, 
                                                          bands=bands, 
                                                          order=5, 
                                                          num_class=2,

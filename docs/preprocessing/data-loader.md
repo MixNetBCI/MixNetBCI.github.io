@@ -5,9 +5,9 @@ parent: Preprocessing
 nav_order: 5
 ---
 
-# min2net.utils.DataLoader
+# mixnet.utils.DataLoader
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/utils.py#L82){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/utils.py#L175){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .no_toc }
 
@@ -24,16 +24,16 @@ nav_order: 5
 Loading the preprocessed data of subject-dependent and subject-independent setting
 
 ```py
-min2net.utils.DataLoader()
+mixnet.utils.DataLoader()
 ```
 
 **Arguments:**
 
 | Arguments | Description | Default |
 |:---|:----|:---|
-| dataset   | `str` dataset name ('OpenBMI', 'SMR_BCI', 'BCIC2a').|  |
+| dataset   | `str` dataset name (‘BCIC2a’, ‘BCIC2b’, ‘BNCI2015_001’, ‘SMR_BCI’, ‘HighGamma’,  ‘OpenBMI’).|  |
 | train_type    | `str` traing type ('subject_dependent', 'subject_independent'). | `None`  |
-| data_type    | `str` traing type ('fbcsp', 'spectral_spatial', 'time_domain'). | `None`  |
+| data_type    | `str` traing type ('fbcsp', 'spectral_spatial', 'time_domain', 'spectral_spatial_signals'). | `None`  |
 |  num_class  | `int` number of classes | 2|
 |  subject  | `int` subject ID. (start from 1) | `None` |
 |  data_format  | `str` data format <br>`None` = not change,<br>'NCTD'=(#n_trial, #channels, #time, #depth), <br>'NTCD'=(#n_trial, #time, #channels, #depth), <br>'NSHWD'=(#n_trial, #n_subbands, #height, #width, #depth) | `None` |
@@ -99,15 +99,51 @@ DataLoader.load_test_set(fold, **kwargs)
 
 ---
 
-## Example
+## Example 1: DataLoader for MIN2Net
 
 ```py
-from min2net.utils import DataLoader
+from mixnet.utils import DataLoader
 
 loader = DataLoader(dataset='OpenBMI', 
                     train_type='subject_independent', 
                     subject=1, 
                     data_format='NTCD', 
+                    data_type='time_domain', 
+                    dataset_path='/datasets')
+
+X_train, y_train = loader.load_train_set(fold=1)
+X_val, y_val = loader.load_val_set(fold=1)
+X_test, y_test = loader.load_test_set(fold=1)
+
+```
+
+## Example 2: DataLoader for MixNet
+
+```py
+from mixnet.utils import DataLoader
+
+loader = DataLoader(dataset='OpenBMI', 
+                    train_type='subject_independent', 
+                    subject=1, 
+                    data_format='NTCD', 
+                    data_type='spectral_spatial_signals', 
+                    dataset_path='/datasets')
+
+X_train, y_train = loader.load_train_set(fold=1)
+X_val, y_val = loader.load_val_set(fold=1)
+X_test, y_test = loader.load_test_set(fold=1)
+
+```
+
+## Example 3: DataLoader for EEGNet and DeepConvNet
+
+```py
+from mixnet.utils import DataLoader
+
+loader = DataLoader(dataset='OpenBMI', 
+                    train_type='subject_independent', 
+                    subject=1, 
+                    data_format='NDCT', 
                     data_type='time_domain', 
                     dataset_path='/datasets')
 

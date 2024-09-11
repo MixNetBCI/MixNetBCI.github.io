@@ -2,12 +2,12 @@
 layout: default
 title: OpenBMI dataset
 parent: Preprocessing
-nav_order: 4
+nav_order: 2
 ---
 
-# min2net.preprocessing.OpenBMI
+# mixnet.preprocessing.OpenBMI
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/tree/main/min2net/preprocessing/OpenBMI){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/OpenBMI){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 {: .fs-6 .fw-300 }
 
@@ -22,7 +22,7 @@ nav_order: 4
 ---
 ## Time domain
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/preprocessing/OpenBMI/time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/OpenBMI/time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
 
@@ -52,7 +52,7 @@ time_domain.subject_dependent(k_folds,
 
 **Example**
 ```py
-import min2net.preprocessing as prep
+import mixnet.preprocessing as prep
 
 prep.OpenBMI.time_domain.subject_dependent_setting(k_folds=5,
                                                  pick_smp_freq=100, 
@@ -89,7 +89,7 @@ time_domain.subject_independent(k_folds,
 
 **Example**
 ```py
-import min2net.preprocessing as prep
+import mixnet.preprocessing as prep
 
 prep.OpenBMI.time_domain.subject_independent_setting(k_folds=5,
                                                     pick_smp_freq=100, 
@@ -101,7 +101,7 @@ prep.OpenBMI.time_domain.subject_independent_setting(k_folds=5,
 
 ## Filter Bank Common Spatial Pattern (FBCSP)
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/preprocessing/OpenBMI/fbcsp.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/OpenBMI/fbcsp.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
 
@@ -135,7 +135,7 @@ fbcsp.subject_dependent(k_folds,
 
 **Example**
 ```py
-import min2net.preprocessing as prep
+import mixnet.preprocessing as prep
 
 bands = [[4, 8], [8, 12], [12, 16], 
          [16, 20], [20, 24], [24, 28], 
@@ -182,7 +182,7 @@ fbcsp.subject_independent(k_folds,
 
 **Example**
 ```py
-import min2net.preprocessing as prep
+import mixnet.preprocessing as prep
 
 bands = [[4, 8], [8, 12], [12, 16], 
          [16, 20], [20, 24], [24, 28], 
@@ -200,7 +200,7 @@ prep.OpenBMI.fbcsp.subject_independent_setting(k_folds=5,
 ---
 ## Spectral Spatial mapping
 
-[<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/preprocessing/OpenBMI/spectral_spatial.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/OpenBMI/spectral_spatial.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
 ### Subject-dependent setting
  Preprocess raw time-series EEG in subject-dependent setting using Spectral Spatial mapping. Split data into train, validation and test sets using stratified k-fold cross-validation.
@@ -234,7 +234,7 @@ spectral_spatial.subject_dependent(k_folds,
 
 **Example**
 ```py
-import min2net.preprocessing as prep
+import mixnet.preprocessing as prep
 
 bands = [[7.5,14],[11,13],[10,14],[9,12],[19,22],
          [16,22],[26,34],[17.5,20.5],[7,30],[5,14],
@@ -285,7 +285,7 @@ spectral_spatial.subject_independent(k_folds,
 
 **Example**
 ```py
-import min2net.preprocessing as prep
+import mixnet.preprocessing as prep
 
 bands = [[7.5,14],[11,13],[10,14],[9,12],[19,22],
          [16,22],[26,34],[17.5,20.5],[7,30],[5,14],
@@ -300,5 +300,102 @@ prep.OpenBMI.spectral_spatial.subject_independent_setting(k_folds=5,
                                                          bands=bands, 
                                                          n_pick_bands=20, 
                                                          order=5, 
+                                                         save_path='datasets')
+```
+---
+## Spectral Spatial Signals generation
+
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/mixnet/preprocessing/OpenBMI/spectral_spatial_signals.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+
+### Subject-dependent setting
+ Preprocess raw time-series EEG in subject-dependent setting using Spectral Spatial Signals generation. Split data into train, validation and test sets using stratified k-fold cross-validation.
+
+```py
+spectral_spatial_signals.subject_dependent(k_folds, 
+                                   pick_smp_freq, 
+                                   n_components, 
+                                   bands, 
+                                   n_features, 
+                                   order, 
+                                   save_path,
+                                   num_class,
+                                   sel_chs)
+```
+
+**Arguments:**
+
+| Arguments | Description |
+|:---|:----|
+|k_folds           | `int` number of k-fold cross-validation. |
+| pick_smp_freq    | `int` pick sample frequency (downsampling EEG to to `pick_smp_freq`) |
+| n_components     | `int` number of components of CSP|
+| bands            | `list`  list of low cut and high cut frequency bands of filter bank e.g. `[[4, 8], [8, 12], ...]` |
+| n_features       | `int` number of features for mutual_info_classif |
+| order            | `int` number of order of butter bandpass filter  |
+| save_path        | `str` path to save processed EEG  |
+| num_class        | `int` number of classes. Default 2|
+| sel_chs          | `list` or `None`. list if EEG channels. Default `None` |
+
+**Example**
+```py
+import mixnet.preprocessing as prep
+
+bands = [[4, 8], [8, 12], [12, 16], 
+            [16, 20], [20, 24], [24, 28], 
+            [28, 32], [32, 36], [36, 40]]
+
+prep.OpenBMI.spectral_spatial_signals.subject_dependent_setting(k_folds=5, 
+                                                       pick_smp_freq=100, 
+                                                       n_components=4, 
+                                                       bands=bands, 
+                                                       order=5,
+                                                       num_class=2, 
+                                                       save_path='datasets')
+```
+
+### Subject-independent setting
+
+Preprocess raw time-series EEG in subject-independent setting using Spectral Spatial Signals generation. Split data into train, validation and test sets using stratified k-fold cross-validation.
+
+```py
+spectral_spatial_signals.subject_independent(k_folds, 
+                                     pick_smp_freq, 
+                                     n_components, 
+                                     bands, 
+                                     n_features, 
+                                     order, 
+                                     save_path,
+                                     num_class,
+                                     sel_chs)
+```
+
+**Arguments:**
+
+| Arguments | Description |
+|:---|:----|
+|k_folds           | `int` number of k-fold cross-validation. |
+| pick_smp_freq    | `int` pick sample frequency (downsampling EEG to to `pick_smp_freq`) |
+| n_components     | `int` number of components of CSP|
+| bands            | `list`  list of low cut and high cut frequency bands of filter bank e.g. `[[4, 8], [8, 12], ...]` |
+| n_features       | `int` number of features for mutual_info_classif |
+| order            | `int` number of order of butter bandpass filter  |
+| save_path        | `str` path to save processed EEG  |
+| num_class        | `int` number of classes. Default 2|
+| sel_chs          | `list` or `None`. list if EEG channels. Default `None` |
+
+**Example**
+```py
+import mixnet.preprocessing as prep
+
+bands = [[4, 8], [8, 12], [12, 16], 
+            [16, 20], [20, 24], [24, 28], 
+            [28, 32], [32, 36], [36, 40]]
+
+prep.OpenBMI.spectral_spatial_signals.subject_independent_setting(k_folds=5, 
+                                                         pick_smp_freq=100, 
+                                                         n_components=2, 
+                                                         bands=bands, 
+                                                         order=5, 
+                                                         num_class=2,
                                                          save_path='datasets')
 ```
