@@ -2,10 +2,10 @@
 layout: default
 title: EEGNet
 parent: Models
-nav_order: 2
+nav_order: 4
 ---
 
-# min2net.model.EEGNet
+# EEGNet Usage
 
 [<img src="https://min2net.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/IoBT-VISTEC/MIN2Net/blob/main/min2net/model/EEGNet.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 
@@ -19,7 +19,7 @@ nav_order: 2
 
 ---
 ## About EEGNet
-Original authors have uploaded their code here https://github.com/vlawhern/arl-eegmodels
+Original authors have uploaded their code here [https://github.com/vlawhern/arl-eegmodels](https://github.com/vlawhern/arl-eegmodels)
 
 If you use the EEGNet model in your research, please cite the following paper:
 
@@ -36,95 +36,43 @@ If you use the EEGNet model in your research, please cite the following paper:
 }
 ```
 ---
-## EEGNet class
 
-Configures the model for training. Based on [tf.keras.Model](https://www.tensorflow.org/api_docs/python/tf/keras/Model).
+## Preparation for EEGNet's input
 
+An example of EEGNet's input on the BCIC IV 2a dataset (All settings are set up as optimal settings in the original paper).
+
+### Downloading a particular dataset
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/experiments/download_datasets.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
 ```py
-min2net.model.EEGNet()
+python download_datasets.py --dataset 'BCIC2a'
 ```
+---
+### Preprocessing based on time domain EEG over the considered dataset 
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/experiments/prep_time_domain.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+```py
+python prep_time_domain.py --dataset 'BCIC2a'
+```
+---
+### Build, fit, and evaluate EEGNet
+[<img src="https://mixnetbci.github.io/assets/images/github.png" width="30" height="30"> View source on GitHub](https://github.com/Max-Phairot-A/MixNet/blob/main/experiments/run_EEGNet.py){: .btn .fs-5 .mb-4 .mb-md-0 } 
+```py
+# Subject-dependent MI classification
+python run_EEGNet.py --model_name 'EEGNet' --dataset 'BCIC2a' --train_type 'subject_dependent' --data_type 'time_domain' --num_class 2  --num_chs 20 --GPU 0
 
+# Subject-independent MI classification
+python run_EEGNet.py --model_name 'EEGNet' --dataset 'BCIC2a' --train_type 'subject_independent' --data_type 'time_domain' --num_class 2  --num_chs 20 --GPU 0
+```
 
 **Arguments:**
 
 | Arguments | Description | Default |
 |:---|:----|:---|
-|input_shape   | `tuple` of integers. <br/> (1, *#channel*, *#time_point*) | (1,20,400)  |
-| num_class    | `int` number of class.  | 2  |
-| loss         | `str` (name of objective function), objective function or [tf.keras.losses.Loss](https://www.tensorflow.org/api_docs/python/tf/keras/losses) instance.  |  `'sparse_categorical_crossentropy'` |
-|  epochs      | `int` number of epochs to train the model.  |  200 |
-|  batch_size  | `int` or `None`. Number of samples per gradient update. | 100 |
-| optimizer    | `str` (name of optimizer) or `optimizer instance`. See [tf.keras.optimizers](https://www.tensorflow.org/api_docs/python/tf/keras/optimizers).  | Adam(beta_1=0.9, beta_2=0.999, epsilon=1e-08) |
-|  lr          | `float` the start learning rate | 0.01
-|  min_lr      | `float` lower bound on the learning rate. See [tf.keras.callbacks.ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau). | 0.01  |
-|  factor      | `float` factor by which the learning rate will be reduced. See [tf.keras.callbacks.ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau). |  0.25 |
-|  patience    | `int` number of epochs with no improvement after which learning rate will be reduced. See [tf.keras.callbacks.ReduceLROnPlateau](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ReduceLROnPlateau). | 10 |
-|  es_patience | `int` number of epochs with no improvement after which training will be stopped. See [tf.keras.callbacks.EarlyStopping](https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/EarlyStopping). |  20 |
-|  verbose     | `0` or `1`. Verbosity mode. 0 = silent, 1 = progress bar.  | 1 |
-|  log_path    | `str` path to save model | 'logs' |
 |  model_name  | `str` prefix to save model | 'EEGNet' |
-|  **kwargs    | Keyword argument to pass into the function for replacing the variables of the model such as `kernLength`, `F1`, `D`, `F2`,  `norm_rate`, `dropout_rate`, `f1_average`, `data_format`, `shuffle`, `metrics`, `monitor`, `mode`, `save_best_only`, `save_weight_only`, `seed`, and `class_balancing`| -
-
----
-## Build method
-
-Build the model that group layers into an object with training and inference features.
-
-```py
-EEGNet.build()
-```
-
-**Returns:** Model (`tf.keras.Model`): Model object
-  
----
-## Fit method
-Fit the model according to the given training and validation data. This method was implemented based on [tf.keras.Model.fit()](https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit). The model
-`weights` and `logs` will save at `'log_path'`.
-
-```py
-EEGNet.fit(X_train, 
-           y_train, 
-           X_val, 
-           y_val)
-```
-
-**Arguments:**
-
-| Arguments | Description |
-|:---|:----|
-|X_train   | `ndarray` Training EEG signals. shape (*#trial*, *#depth*, *#channel*, *#time_point*) | 
-|y_train   | `ndarray` Label of training set. shape (*#trial*) |
-|X_val   | `ndarray` Validation EEG signals. shape (*#trial*, *#depth*, *#channel*, *#time_point*) |
-|y_val   | `ndarray` Label of validation set. shape (*#trial*) |
-  
----
-## Predict method
-
-Generates output predictions & the loss value & metrics values for the model in test mode for the input samples. This medthod was implemented based on [tf.keras.Model.predict()](https://www.tensorflow.org/api_docs/python/tf/keras/Model#predict) and [tf.keras.Model.evaluate()](https://www.tensorflow.org/api_docs/python/tf/keras/Model#evaluate).
-
-```py
-EEGNet.predict(X_test, 
-               y_test)
-```
-
-| Arguments | Description |
-|:---|:----|
-|X_test   | `ndarray` Testing EEG signals. shape (*#trial*, *#depth*, *#channel*, *#time_point*) | 
-|y_test   | `ndarray` Label of test set. shape (*#trial*) |
-
-**Returns:**
-  >- Y: dictionary of `{y_true, y_pred}`
-  >- evaluation: dictionary of `{loss, accuracy, f1_score}`
-
----
-## Example
-
-```py
-from min2net.model import EEGNet
-import ndarray as np
-
-model = EEGNet(input_shape=(1,20,400), num_class=2, dropout_rate=0.25, shuffle=True)
-model.fit(X_train, y_train, X_val, y_val)
-
-Y, evaluation = model.predict(X_test, y_test)
-```
+|  dataset     | `str` prefix to pick up a particular dataset and save model | 'BCIC2a'|
+|  train_type  | `str` prefix to pick up a particular traning manner and save model | 'subject_dependent'|
+|  data_type   | `str` prefix to select data type of input | 'time_domain' |
+| num_class    | `int` number of classes  | 2  |
+| num_chs      | `int` number of classes  | 20 |
+| log_dir      | `str` path to save model | 'logs' |
+|  subjects    | `int` or `list of int` or `None` list of range test subject, if `None`, use all subjects | `None` |
+|  GPU         |  `str` select GPU ID | 0 | -
